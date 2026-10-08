@@ -1,0 +1,6 @@
+{
+  "name": "DSR Stock & Sales Management",
+  "description": "ড্যাশবোর্ড স্টক ভ্যালু, সেলসম্যান বিতরণ ও ফেরত, ডিএসআর সামারি ও বাকি হিসাব এবং ড্যামেজ স্টক ব্যবস্থাপনা।",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
