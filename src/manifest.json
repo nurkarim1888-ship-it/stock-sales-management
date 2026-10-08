@@ -1,0 +1,52 @@
+{
+  "id": "/",
+  "name": "স্টক ও ডিএসআর সেলস ম্যানেজমেন্ট",
+  "short_name": "DSR স্টক",
+  "description": "ড্যাশবোর্ড স্টক ভ্যালু, সেলসম্যান বিতরণ ও ফেরত, ডিএসআর সামারি ও বাকি হিসাব",
+  "theme_color": "#059669",
+  "background_color": "#0f172a",
+  "display": "standalone",
+  "orientation": "any",
+  "start_url": "/",
+  "scope": "/",
+  "lang": "bn",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "finance"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "সকালে পণ্য বিতরণ",
+      "short_name": "বিতরণ",
+      "description": "সেলসম্যানকে সকালে পণ্য বুঝিয়ে দিন",
+      "url": "/?page=2",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "দিন শেষে ফেরত ও ড্যামেজ",
+      "short_name": "ফেরত",
+      "description": "দিনশেষে ফেরত ও ড্যামেজ পণ্য স্টকে যোগ করুন",
+      "url": "/?page=3",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}

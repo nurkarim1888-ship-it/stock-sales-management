@@ -1,0 +1,106 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "Stock inventory product item",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "unit": { "type": "string" },
+        "unitPrice": { "type": "number" },
+        "stock": { "type": "number" },
+        "damageStock": { "type": "number" },
+        "createdAt": { "type": "string" },
+        "userId": { "type": "string" }
+      },
+      "required": ["id", "name", "unitPrice", "stock", "damageStock"]
+    },
+    "Salesman": {
+      "title": "Salesman",
+      "description": "Sales representative DSR",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "route": { "type": "string" },
+        "currentDue": { "type": "number" },
+        "userId": { "type": "string" }
+      },
+      "required": ["id", "name"]
+    },
+    "DispatchSession": {
+      "title": "DispatchSession",
+      "description": "Daily DSR challan dispatch and settlement session",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "challanNo": { "type": "string" },
+        "salesmanId": { "type": "string" },
+        "salesmanName": { "type": "string" },
+        "salesmanRoute": { "type": "string" },
+        "date": { "type": "string" },
+        "status": { "type": "string" },
+        "totalAmount": { "type": "number" },
+        "cashCollected": { "type": "number" },
+        "dueAmount": { "type": "number" },
+        "userId": { "type": "string" }
+      },
+      "required": ["id", "challanNo", "salesmanId", "date", "status"]
+    },
+    "DamageLog": {
+      "title": "DamageLog",
+      "description": "Audit log for damage stock adjustments",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "productId": { "type": "string" },
+        "productName": { "type": "string" },
+        "quantity": { "type": "number" },
+        "action": { "type": "string" },
+        "note": { "type": "string" },
+        "date": { "type": "string" },
+        "userId": { "type": "string" }
+      },
+      "required": ["id", "productId", "quantity", "action", "date"]
+    },
+    "AppSettings": {
+      "title": "AppSettings",
+      "description": "Business settings and account info",
+      "type": "object",
+      "properties": {
+        "businessName": { "type": "string" },
+        "businessAddress": { "type": "string" },
+        "businessPhone": { "type": "string" },
+        "connectedGmail": { "type": "string" },
+        "cloudSyncEnabled": { "type": "boolean" },
+        "syncCode": { "type": "string" },
+        "userId": { "type": "string" }
+      },
+      "required": ["businessName"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/products/{productId}": {
+      "schema": "Product",
+      "description": "Product collection per authenticated user"
+    },
+    "/users/{userId}/salesmen/{salesmanId}": {
+      "schema": "Salesman",
+      "description": "Salesmen DSR collection per authenticated user"
+    },
+    "/users/{userId}/dispatches/{dispatchId}": {
+      "schema": "DispatchSession",
+      "description": "Dispatch session collection per authenticated user"
+    },
+    "/users/{userId}/damageLogs/{logId}": {
+      "schema": "DamageLog",
+      "description": "Damage log collection per authenticated user"
+    },
+    "/users/{userId}/settings/{settingId}": {
+      "schema": "AppSettings",
+      "description": "Business settings per authenticated user"
+    }
+  }
+}
